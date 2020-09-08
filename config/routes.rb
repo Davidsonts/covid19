@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  root 'home#index'
   get 'home/confirmed'
   get 'home/recovered'
   get 'home/deaths'
