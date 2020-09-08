@@ -1,2 +1,45 @@
-<h1>Home#recovered</h1>
-<p>Find me in app/views/home/recovered.html.erb</p>
+<h1>Recovered</h1>
+
+<table>
+  <thead>
+    <td>provinceState</td>
+    <td>countryRegion</td>
+    <td>lastUpdate</td>
+    <td>lat</td>
+    <td>long</td>
+    <td>recovered</td>
+    <td>active</td>
+    <td>admin2</td>
+    <td>fips</td>
+    <td>combinedKey</td>
+    <%# <td>incidentRate</td>
+    <td>peopleTested</td>
+    <td>peopleHospitalized</td>
+    <td>uid</td>
+    <td>iso3</td>
+    <td>iso2</td> %>
+  </thead>
+  <tbody>
+  <% @recovereds.each do |recovered| %>
+    <tr>
+      <td><%= recovered['provinceState'] %></td>
+      <td><%= recovered['countryRegion'] %></td>
+      <td><%= Time.at(recovered['lastUpdate'].to_i/1000).strftime('%d/%m/%Y %H/%M/%S') %></td>
+      <td><%= recovered['lat'] %></td>
+      <td><%= recovered['long<'] %></td>
+      <td><%= recovered['recovered'] %></td>
+      <td><%= recovered['active'] %></td>
+      <td><%= recovered['admin2'] %></td>
+      <td><%= recovered['fips'] %></td>
+      <td><%= recovered['combinedKey'] %></td>
+      <!-- <td><%= recovered['incidentRate'] %></td>
+      <td><%= recovered['peopleTested'] %></td>
+      <td><%= recovered['peopleHospitalized'] %></td>
+      <td><%= recovered['uid'] %></td>
+      <td><%= recovered['iso3'] %></td>
+      <td><%= recovered['iso2'] %></td> -->
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>

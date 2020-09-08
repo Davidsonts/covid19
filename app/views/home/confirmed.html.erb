@@ -1,2 +1,48 @@
-<h1>Home#confirmed</h1>
-<p>Find me in app/views/home/confirmed.html.erb</p>
+<h1>Confirmed</h1>
+
+<table>
+  <thead>
+    <td>provinceState</td>
+    <td>countryRegion</td>
+    <td>lastUpdate</td>
+    <td>lat</td>
+    <td>long</td>
+    <td>confirmed</td>
+    <td>recovered</td>
+    <td>deaths</td>
+    <td>active</td>
+    <td>admin2</td>
+    <td>fips</td>
+    <td>combinedKey</td>
+    <%# <td>incidentRate</td>
+    <td>peopleTested</td>
+    <td>peopleHospitalized</td>
+    <td>uid</td>
+    <td>iso3</td>
+    <td>iso2</td> %>
+  </thead>
+  <tbody>
+  <% @confirmeds.each do |confirmed| %>
+    <tr>
+      <td><%= confirmed['provinceState'] %></td>
+      <td><%= confirmed['countryRegion'] %></td>
+      <td><%= Time.at(confirmed['lastUpdate'].to_i/1000).strftime('%d/%m/%Y %H/%M/%S') %></td>
+      <td><%= confirmed['lat'] %></td>
+      <td><%= confirmed['long<'] %></td>
+      <td><%= confirmed['confirmed'] %></td>
+      <td><%= confirmed['deaths'] %></td>
+      <td><%= confirmed['active'] %></td>
+      <td><%= confirmed['admin2'] %></td>
+      <td><%= confirmed['fips'] %></td>
+      <td><%= confirmed['combinedKey'] %></td>
+      <!-- <td><%= confirmed['incidentRate'] %></td>
+      <td><%= confirmed['peopleTested'] %></td>
+      <td><%= confirmed['peopleHospitalized'] %></td>
+      <td><%= confirmed['uid'] %></td>
+      <td><%= confirmed['iso3'] %></td>
+      <td><%= confirmed['iso2'] %></td> -->
+    </tr>
+  <% end %>
+
+  </tbody>
+</table>
